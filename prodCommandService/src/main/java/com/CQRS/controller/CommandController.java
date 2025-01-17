@@ -13,15 +13,15 @@ public class CommandController {
     private CommandService comservice;
 
     @PostMapping
-    public Product createProd(@RequestBody ProdEvent prodEvent){
-        return comservice.createProd(prodEvent);
+    public Product createProd(@RequestBody Product prod){
+        return comservice.createProd(prod);
     }
     @PutMapping("/{id}")
-    public Product updateProd(@PathVariable long id,@RequestBody ProdEvent prodEvent){
-        return comservice.updateProd(id, prodEvent);
+    public Product updateProd(@PathVariable long id,@RequestBody Product prod){
+        return comservice.updateProd(id, prod);
     }
     @DeleteMapping("/{id}")
-    public void deleteProd(@PathVariable long id){
-        comservice.deleteProdById(id);
+    public String deleteProd(@PathVariable long id){
+        return comservice.deleteProdById(id);
     }
 }
