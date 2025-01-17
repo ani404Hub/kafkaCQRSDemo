@@ -11,7 +11,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table(name = "PRODUCT_QUERY")
 public class Product {
-    @Id                                     //@GeneratedValue shouldn't be used in id field as it will conflict with producer entity id field
+    @Id 
+    /* @GeneratedValue */                       //@GeneratedValue shouldn't be used in id field as it will conflict with producer entity id field
     private long id;
     private String name;
     private double price;
