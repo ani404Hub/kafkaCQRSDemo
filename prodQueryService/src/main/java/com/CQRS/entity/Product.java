@@ -1,9 +1,6 @@
 package com.CQRS.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,9 +11,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table(name = "PRODUCT_QUERY")
 public class Product {
-    @Id
-    @GeneratedValue
+    @Id                                     //@GeneratedValue shouldn't be used in id field as it will conflict with producer entity id field
     private long id;
     private String name;
     private double price;
+    @Version
+    private int version;                   //version is maintained to ensure how many times same row updated
 }
