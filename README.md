@@ -9,3 +9,5 @@ Keeping the Payload simple, While create a new record, it will publish createEve
   "description":"Samsung S20",
   "price":"50000"
   }
+
+Added Swagger by springdoc-open Api - http://localhost:9091/swagger-ui/index.html#/
